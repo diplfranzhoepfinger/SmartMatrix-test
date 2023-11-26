@@ -1,0 +1,3 @@
+[submodule "test/components/Adafruit-GFX-Library"]
+	path = test/components/Adafruit-GFX-Library
+	url = https://github.com/diplfranzhoepfinger/Adafruit-GFX-Library.git
