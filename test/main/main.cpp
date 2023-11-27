@@ -1,11 +1,14 @@
-#define SUPPORT_ADAFRUIT_GFX_LIBRARY
+#define USE_ADAFRUIT_GFX_LAYERS
 
+#include <inttypes.h>
+#include "driver/gpio.h"
+#define gpio_pad_select_gpio esp_rom_gpio_pad_select_gpio
 #include <MatrixHardware_ESP32_V0.h>
 #include <SmartMatrix.h>
 
 #define COLOR_DEPTH 24
 const uint16_t kMatrixWidth = 32;
-const uint16_t kMatrixHeight = 32;
+const uint16_t kMatrixHeight = 32;// HUB12 panels have limited support, the height needs to be doubled to account for the fact they only use one RGB channel, though SmartMatrix Library will fill the second channel
 const uint8_t kRefreshDepth = 36;
 const uint8_t kDmaBufferRows = 4;
 const uint8_t kPanelType = SMARTMATRIX_HUB12_16ROW_32COL_MOD4SCAN;
@@ -15,7 +18,7 @@ SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth,
 
 #if 1
   const uint8_t kBackgroundLayerOptions = (SM_BACKGROUND_GFX_OPTIONS_NONE);
-  SMARTMATRIX_ALLOCATE_BACKGROUND_GFX_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeight, COLOR_DEPTH, kBackgroundLayerOptions);
+  SMARTMATRIX_ALLOCATE_BACKGROUND_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeight, COLOR_DEPTH, kBackgroundLayerOptions);
 #else
   const uint8_t kGFXMonoLayerOptions = (SM_GFX_MONO_OPTIONS_NONE);
   SMARTMATRIX_ALLOCATE_GFX_MONO_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeight, kMatrixWidth, kMatrixHeight, COLOR_DEPTH, kGFXMonoLayerOptions);
