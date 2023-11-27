@@ -32,8 +32,28 @@ SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth,
 void testText() {
 	backgroundLayer.fillScreen(BLACK);
 	backgroundLayer.setCursor(0, 0);
-	backgroundLayer.setTextColor(RED);  backgroundLayer.setTextSize(1);
+	backgroundLayer.setTextColor(RED);
+	backgroundLayer.setTextSize(1);
 	backgroundLayer.println("Hello World!");
+}
+
+
+unsigned long testFastLines(uint16_t color1, uint16_t color2) {
+  unsigned long start;
+  int           x, y, w = backgroundLayer.width(), h = backgroundLayer.height();
+
+  backgroundLayer.fillScreen(BLACK);
+  start = micros();
+  for(y=0; y<h; y+=5) {
+    backgroundLayer.drawFastHLine(0, y, w, color1);
+    backgroundLayer.swapBuffers();
+  }
+  for(x=0; x<w; x+=5) {
+    backgroundLayer.drawFastVLine(x, 0, h, color2);
+    backgroundLayer.swapBuffers();
+  }
+
+  return micros() - start;
 }
 
 
@@ -50,12 +70,11 @@ void setup() {
 }
 
 void loop() {
-  for(uint8_t rotation=0; rotation<4; rotation++) {
-    backgroundLayer.setRotation(rotation);
-    testText();
-    backgroundLayer.swapBuffers();
-    delay(1000);
-  }
+  testText();
+  backgroundLayer.swapBuffers();
+  delay(3000);
+  testFastLines(RED, RED);
+  delay(3000);
 }
 
 
