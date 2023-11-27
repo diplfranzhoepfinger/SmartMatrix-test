@@ -7,7 +7,7 @@
 #include <SmartMatrix.h>
 
 #define COLOR_DEPTH 24
-const uint16_t kMatrixWidth = 32;
+const uint16_t kMatrixWidth = 64;
 const uint16_t kMatrixHeight = 32;// HUB12 panels have limited support, the height needs to be doubled to account for the fact they only use one RGB channel, though SmartMatrix Library will fill the second channel
 const uint8_t kRefreshDepth = 36;
 const uint8_t kDmaBufferRows = 4;
@@ -27,6 +27,17 @@ SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth,
 #define BLACK   0x0000
 #define RED     0xF800
 
+
+
+void testText() {
+	backgroundLayer.fillScreen(BLACK);
+	backgroundLayer.setCursor(0, 0);
+	backgroundLayer.setTextColor(RED);  backgroundLayer.setTextSize(1);
+	backgroundLayer.println("Hello World!");
+}
+
+
+
 void setup() {
   matrix.addLayer(&backgroundLayer);
   matrix.begin();
@@ -39,10 +50,13 @@ void setup() {
 }
 
 void loop() {
-//  for(uint8_t rotation=0; rotation<4; rotation++) {
-//    backgroundLayer.setRotation(rotation);
-//    testText();
-//    backgroundLayer.swapBuffers();
-//    delay(1000);
-//  }
+  for(uint8_t rotation=0; rotation<4; rotation++) {
+    backgroundLayer.setRotation(rotation);
+    testText();
+    backgroundLayer.swapBuffers();
+    delay(1000);
+  }
 }
+
+
+
