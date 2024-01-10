@@ -3,7 +3,7 @@
 	url = https://github.com/diplfranzhoepfinger/Adafruit-GFX-Library.git
 [submodule "test/components/arduino"]
 	path = test/components/arduino
-	url = https://github.com/diplfranzhoepfinger/arduino-esp32.git
+	url = https://github.com/espressif/arduino-esp32.git
 [submodule "test/components/SmartMatrix"]
 	path = test/components/SmartMatrix
 	url = https://github.com/diplfranzhoepfinger/SmartMatrix.git
