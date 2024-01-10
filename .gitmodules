@@ -9,4 +9,4 @@
 	url = https://github.com/diplfranzhoepfinger/SmartMatrix.git
 [submodule "test/components/Adafruit_BusIO"]
 	path = test/components/Adafruit_BusIO
-	url = https://github.com/diplfranzhoepfinger/Adafruit_BusIO.git
+	url = https://github.com/adafruit/Adafruit_BusIO.git
