@@ -12,7 +12,7 @@ const uint16_t kMatrixHeight = 32;// HUB12 panels have limited support, the heig
 const uint8_t kRefreshDepth = 36;
 const uint8_t kDmaBufferRows = 4;
 const uint8_t kPanelType = SM_PANELTYPE_HUB75_32ROW_MOD16SCAN;
-const uint32_t kMatrixOptions = (SMARTMATRIX_OPTIONS_INVERT_R1);
+const uint32_t kMatrixOptions = (SMARTMATRIX_OPTIONS_INVERT_R1R2);
 
 SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth, kDmaBufferRows, kPanelType, kMatrixOptions);
 
