@@ -10,3 +10,8 @@
 [submodule "test/components/Adafruit_BusIO"]
 	path = test/components/Adafruit_BusIO
 	url = https://github.com/adafruit/Adafruit_BusIO.git
+[submodule "test/components/FastLED"]
+	path = test/components/FastLED
+	url = https://github.com/diplfranzhoepfinger/FastLED.git
+	
+	
