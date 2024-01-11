@@ -37,6 +37,14 @@ void testText() {
 	backgroundLayer.println("Hello World!");
 }
 
+void testText2() {
+	backgroundLayer.fillScreen(BLACK);
+	backgroundLayer.setCursor(0, 0);
+	backgroundLayer.setTextColor(RED);
+	backgroundLayer.setTextSize(2);
+	backgroundLayer.println("Hello World! larger");
+}
+
 
 unsigned long testFastLines(uint16_t color1, uint16_t color2) {
   unsigned long start;
@@ -65,12 +73,14 @@ void setup() {
 
   backgroundLayer.setTextSize(1);
   backgroundLayer.setTextColor(RED);
-  backgroundLayer.println("Test");
   backgroundLayer.swapBuffers();
 }
 
 void loop() {
   testText();
+  backgroundLayer.swapBuffers();
+  delay(3000);
+  testText2();
   backgroundLayer.swapBuffers();
   delay(3000);
   testFastLines(RED, RED);
