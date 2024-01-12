@@ -29,9 +29,14 @@
 
 #include <Fonts/Picopixel.h>
 #include <Fonts/TomThumb.h>
+#include <Fonts/FreeMono9pt7b.h>
 #include <Fonts/FreeMono12pt7b.h>
+#include <Fonts/FreeMonoBold9pt7b.h>
 #include <Fonts/FreeMonoBold18pt7b.h>
+#include <Fonts/FreeMonoOblique18pt7b.h>
+#include <Fonts/FreeMonoOblique12pt7b.h>
 #include <Fonts/FreeMonoBoldOblique24pt7b.h>
+#include <Fonts/FreeSans9pt7b.h>
 #include <Fonts/FreeSerif24pt7b.h>
 #include <Fonts/Org_01.h>
 #include <Fonts/Tiny3x3a2pt7b.h>
