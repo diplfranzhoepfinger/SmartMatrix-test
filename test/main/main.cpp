@@ -7,12 +7,12 @@
 #include <SmartMatrix.h>
 
 #define COLOR_DEPTH 24
-const uint16_t kMatrixWidth = 64;
+const uint16_t kMatrixWidth = 128;
 const uint16_t kMatrixHeight = 32;// HUB12 panels have limited support, the height needs to be doubled to account for the fact they only use one RGB channel, though SmartMatrix Library will fill the second channel
 const uint8_t kRefreshDepth = 36;
 const uint8_t kDmaBufferRows = 4;
-const uint8_t kPanelType = SMARTMATRIX_HUB12_16ROW_32COL_MOD4SCAN;
-const uint32_t kMatrixOptions = (SMARTMATRIX_OPTIONS_HUB12_MODE);
+const uint8_t kPanelType = SM_PANELTYPE_HUB75_32ROW_MOD16SCAN;
+const uint32_t kMatrixOptions = (SM_HUB75_OPTIONS_NONE);
 
 SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth, kDmaBufferRows, kPanelType, kMatrixOptions);
 
