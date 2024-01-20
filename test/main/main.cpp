@@ -163,7 +163,7 @@ void loop() {
 
 
     Serial.printf("Alive %lums\r\n", millis());
-    //esp_task_wdt_reset();
+    esp_task_wdt_reset();
     delay(1);                                  //1ms delay
 
 
